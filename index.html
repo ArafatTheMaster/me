@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Start Page</title>
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+:root{
+  --bg:#ffffff;
+  --card:#ffffff;
+  --text:#111827;
+  --shadow:0 14px 30px rgba(0,0,0,.18);
+}
+
+@media(prefers-color-scheme:dark){
+  :root{
+    --bg:#0f172a;
+    --card:#111827;
+    --text:#e5e7eb;
+  }
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:system-ui;
+  -webkit-tap-highlight-color:transparent;
+}
+
+body{
+  background:#000;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+}
+
+/* PHONE FRAME */
+.app{
+  width:100%;
+  max-width:430px;
+  height:100vh;
+  background:var(--bg);
+  padding:18px;
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+}
+
+/* ===== PROFILE (CENTERED) ===== */
+.profile{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  margin-bottom:14px;
+}
+
+.profile img{
+  width:78px;
+  height:78px;
+  border-radius:50%;
+  object-fit:cover;
+  margin-bottom:6px;
+}
+
+.profile-text{
+  font-size:17px;
+  color:var(--text);
+}
+
+.verified{
+  color:#1d9bf0;
+  margin-left:4px;
+}
+
+/* ===== SEARCH (CENTERED) ===== */
+.search-wrap{
+  display:flex;
+  justify-content:center;
+  margin-bottom:18px;
+}
+
+.search-container{
+  width:100%;
+  max-width:360px;
+  display:flex;
+  align-items:center;
+  border:2px solid #3b82f6;
+  border-radius:26px;
+  padding:6px 10px;
+}
+
+.search-container img{
+  width:18px;
+  margin-right:8px;
+}
+
+.search-container input{
+  flex:1;
+  border:none;
+  outline:none;
+  background:transparent;
+  font-size:14px;
+}
+
+.search-container button{
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  border:none;
+  background:#3b82f6;
+  color:#fff;
+}
+
+/* ===== GRID AREA (UNCHANGED) ===== */
+.grid-wrap{
+  flex:0 0 auto;
+  padding:14px;
+  border-radius:28px;
+}
+
+.dashboard{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  grid-template-rows:repeat(5,1fr);
+  gap:14px;
+}
+
+.card{
+  background:var(--card);
+  border-radius:20px;
+  box-shadow:var(--shadow);
+  text-decoration:none;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  padding:14px 6px;
+}
+
+.card:active{
+  transform:scale(.94);
+}
+
+.icon{
+  width:46px;
+  height:46px;
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:20px;
+  color:#fff;
+  margin-bottom:6px;
+}
+
+.card span{
+  font-size:11px;
+  font-weight:600;
+  color:var(--text);
+}
+
+/* COLORS */
+.pink{background:linear-gradient(45deg,#ff7aa2,#ffc371);}
+.red{background:#ef4444;}
+.blue{background:#3b82f6;}
+.green{background:#22c55e;}
+.black{background:#111;}
+.yellow{background:#facc15;}
+
+.bottom-gap{
+  flex:1;
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+  <!-- PROFILE -->
+  <div class="profile">
+    <img src="https://i.pravatar.cc/150" alt="Profile">
+    <div class="profile-text">
+      Hi, I'm <b>Arafat Ahmed</b>
+      <i class="fa-solid fa-circle-check verified"></i>
+    </div>
+  </div>
+
+  <!-- SEARCH -->
+  <form action="https://www.google.com/search" method="GET" target="_blank">
+    <div class="search-wrap">
+      <div class="search-container">
+        <img src="https://www.google.com/favicon.ico">
+        <input type="text" name="q" placeholder="Search Google">
+        <button type="submit">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+
+  <!-- GRID -->
+  <div class="grid-wrap">
+    <div class="dashboard">
+
+      <a href="#" class="card"><div class="icon pink"><i class="fa-solid fa-wifi"></i></div><span>Amber</span></a>
+      <a href="#" class="card"><div class="icon red"><i class="fa-solid fa-film"></i></div><span>MLWBD</span></a>
+      <a href="#" class="card"><div class="icon pink"><i class="fa-solid fa-video"></i></div><span>Movie</span></a>
+      <a href="#" class="card"><div class="icon pink"><i class="fa-solid fa-store"></i></div><span>Dokan</span></a>
+
+      <a href="#" class="card"><div class="icon pink"><i class="fa-solid fa-chart-line"></i></div><span>Forbes</span></a>
+      <a href="#" class="card"><div class="icon black"><i class="fa-solid fa-chart-simple"></i></div><span>Trade</span></a>
+      <a href="#" class="card"><div class="icon blue"><i class="fa-solid fa-coins"></i></div><span>Coin</span></a>
+      <a href="#" class="card"><div class="icon green"><i class="fa-solid fa-leaf"></i></div><span>Nature</span></a>
+
+      <a href="#" class="card"><div class="icon black"><i class="fa-solid fa-bolt"></i></div><span>Crypto</span></a>
+      <a href="#" class="card"><div class="icon black"><i class="fa-solid fa-wallet"></i></div><span>Wallet</span></a>
+      <a href="#" class="card"><div class="icon blue"><i class="fa-solid fa-newspaper"></i></div><span>Today</span></a>
+      <a href="#" class="card"><div class="icon blue"><i class="fa-solid fa-lock"></i></div><span>Decrypt</span></a>
+
+      <a href="#" class="card"><div class="icon blue"><i class="fa-solid fa-coins"></i></div><span>Market</span></a>
+      <a href="#" class="card"><div class="icon blue"><i class="fa-solid fa-closed-captioning"></i></div><span>Sub</span></a>
+      <a href="#" class="card"><div class="icon yellow"><i class="fa-solid fa-file"></i></div><span>File</span></a>
+      <a href="#" class="card"><div class="icon green"><i class="fa-solid fa-face-smile"></i></div><span>Happy</span></a>
+
+      <a href="#" class="card"><div class="icon red"><i class="fa-solid fa-bag-shopping"></i></div><span>Shop</span></a>
+      <a href="#" class="card"><div class="icon black"><i class="fa-solid fa-mountain"></i></div><span>Man</span></a>
+      <a href="#" class="card"><div class="icon red"><i class="fa-solid fa-shoe-prints"></i></div><span>Bata</span></a>
+      <a href="#" class="card"><div class="icon red"><i class="fa-solid fa-gamepad"></i></div><span>Games</span></a>
+
+    </div>
+  </div>
+
+  <div class="bottom-gap"></div>
+
+</div>
+
+</body>
+</html>
