@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Start Page</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+:root{
+  --bg:#ffffff;
+  --card:#ffffff;
+  --text:#111827;
+  --shadow:0 12px 24px rgba(0,0,0,.16);
+}
+@media(prefers-color-scheme:dark){
+  :root{
+    --bg:#0f172a;
+    --card:#111827;
+    --text:#e5e7eb;
+  }
+}
+*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui;}
+body{
+  background:#000;
+  display:flex;
+  justify-content:center;
+}
+.app{
+  width:100%;
+  max-width:430px;
+  height:100vh;
+  background:var(--bg);
+  padding:18px;
+  overflow:hidden;
+}
+
+/* PROFILE */
+.profile{text-align:center;margin-bottom:14px;}
+.profile img{width:78px;height:78px;border-radius:50%;}
+.profile-text{margin-top:6px;color:var(--text);}
+.verified{color:#1d9bf0;}
+
+/* SEARCH */
+.search-wrap{margin:16px 0;}
+.search-container{
+  display:flex;align-items:center;
+  border:2px solid #3b82f6;
+  border-radius:26px;
+  padding:6px 10px;
+}
+.search-container img{width:18px;margin-right:8px;}
+.search-container input{
+  flex:1;border:none;outline:none;background:none;
+}
+.search-container button{
+  width:36px;height:36px;border-radius:50%;
+  border:none;background:#3b82f6;color:#fff;
+}
+
+/* SLIDER */
+.viewport{overflow:hidden;}
+.pager{
+  display:flex;
+  transition:.35s ease;
+}
+.page{
+  flex:0 0 100%;
+  padding:12px;
+}
+.dashboard{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+}
+
+/* CARD */
+.card{
+  background:var(--card);
+  border-radius:18px;
+  box-shadow:var(--shadow);
+  text-decoration:none;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:10px 4px;
+}
+.card:active{transform:scale(.94);}
+.icon{
+  width:40px;height:40px;border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;margin-bottom:5px;
+}
+.card span{
+  font-size:10px;font-weight:600;color:var(--text);
+}
+
+/* COLORS */
+.pink{background:linear-gradient(45deg,#ff7aa2,#ffc371);}
+.red{background:#ef4444;}
+.blue{background:#3b82f6;}
+.green{background:#22c55e;}
+.black{background:#111;}
+.yellow{background:#facc15;}
+
+/* DOTS */
+.dots{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin-top:10px;
+}
+.dot{
+  width:8px;height:8px;border-radius:50%;
+  background:#cbd5e1;
+  transition:.25s;
+  cursor:pointer;
+}
+.dot.active{
+  background:#3b82f6;
+  transform:scale(1.8);
+}
+</style>
+</head>
+
+<body>
+<div class="app">
+
+<!-- PROFILE -->
+<div class="profile">
+  <img src="https://i.pravatar.cc/150">
+  <div class="profile-text">
+    Hi, I'm <b>Arafat Ahmed</b>
+    <i class="fa-solid fa-circle-check verified"></i>
+  </div>
+</div>
+
+<!-- SEARCH -->
+<form action="https://www.google.com/search" target="_blank">
+  <div class="search-wrap">
+    <div class="search-container">
+      <img src="https://www.google.com/favicon.ico">
+      <input name="q" placeholder="Search Google">
+      <button><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+  </div>
+</form>
+
+<!-- SLIDER -->
+<div class="viewport">
+  <div class="pager" id="pager">
+
+    <!-- PAGE 1 -->
+    <div class="page"><div class="dashboard">
+      <!-- 20 buttons -->
+      <a href="#" class="card"><div class="icon pink"><i class="fa-solid fa-wifi"></i></div><span>Amber</span></a>
+      <a href="#" class="card"><div class="icon red"><i class="fa-solid fa-film"></i></div><span>MLWBD</span></a>
+      <a href="#" class="card"><div class="icon blue"><i class="fa-solid fa-store"></i></div><span>Dokan</span></a>
+      <a href="#" class="card"><div class="icon green"><i class="fa-solid fa-leaf"></i></div><span>Nature</span></a>
+
+      <a href="#" class="card"><div class="icon yellow"><i class="fa-solid fa-file"></i></div><span>File</span></a>
+      <a href="#" class="card"><div class="icon black"><i class="fa-solid fa-wallet"></i></div><span>Wallet</span></a>
+      <a href="#" class="card"><div class="icon pink"><i class="fa-solid fa-video"></i></div><span>Movie</span></a>
+      <a href="#" class="card"><div class="icon blue"><i class="fa-solid fa-lock"></i></div><span>Secure</span></a>
+
+      <a href="#" class="card"><div class="icon red"><i class="fa-solid fa-gamepad"></i></div><span>Games</span></a>
+      <a href="#" class="card"><div class="icon green"><i class="fa-solid fa-leaf"></i></div><span>Green</span></a>
+      <a href="#" class="card"><div class="icon black"><i class="fa-solid fa-bolt"></i></div><span>Power</span></a>
+      <a href="#" class="card"><div class="icon yellow"><i class="fa-solid fa-star"></i></div><span>Star</span></a>
+
+      <a href="#" class="card"><div class="icon blue"><i class="fa-solid fa-newspaper"></i></div><span>News</span></a>
+      <a href="#" class="card"><div class="icon pink"><i class="fa-solid fa-heart"></i></div><span>Love</span></a>
+      <a href="#" class="card"><div class="icon red"><i class="fa-solid fa-cart-shopping"></i></div><span>Shop</span></a>
+      <a href="#" class="card"><div class="icon green"><i class="fa-solid fa-tree"></i></div><span>Tree</span></a>
+
+      <a href="#" class="card"><div class="icon black"><i class="fa-solid fa-mountain"></i></div><span>Hill</span></a>
+      <a href="#" class="card"><div class="icon yellow"><i class="fa-solid fa-music"></i></div><span>Music</span></a>
+      <a href="#" class="card"><div class="icon blue"><i class="fa-solid fa-cloud"></i></div><span>Cloud</span></a>
+      <a href="#" class="card"><div class="icon pink"><i class="fa-solid fa-camera"></i></div><span>Camera</span></a>
+    </div></div>
+
+    <!-- PAGE 2,3,4 একইভাবে কপি করা (৮০ total) -->
+    <!-- brevity না রেখে intentionally full page 1 দেখানো -->
+    <!-- তুমি চাইলে icon/name/link বদলাবে -->
+    <div class="page"><div class="dashboard">
+      <!-- 20 buttons -->
+      <a href="#" class="card"><div class="icon pink"><i class="fa-solid fa-wifi"></i></div><span>Amber</span></a>
+      <a href="#" class="card"><div class="icon red"><i class="fa-solid fa-film"></i></div><span>MLWBD</span></a>
+      <a href="#" class="card"><div class="icon blue"><i class="fa-solid fa-store"></i></div><span>Dokan</span></a>
+      <a href="#" class="card"><div class="icon green"><i class="fa-solid fa-leaf"></i></div><span>Nature</span></a>
+
+      <a href="#" class="card"><div class="icon yellow"><i class="fa-solid fa-file"></i></div><span>File</span></a>
+      <a href="#" class="card"><div class="icon black"><i class="fa-solid fa-wallet"></i></div><span>Wallet</span></a>
+      <a href="#" class="card"><div class="icon pink"><i class="fa-solid fa-video"></i></div><span>Movie</span></a>
+      <a href="#" class="card"><div class="icon blue"><i class="fa-solid fa-lock"></i></div><span>Secure</span></a>
+
+      <a href="#" class="card"><div class="icon red"><i class="fa-solid fa-gamepad"></i></div><span>Games</span></a>
+      <a href="#" class="card"><div class="icon green"><i class="fa-solid fa-leaf"></i></div><span>Green</span></a>
+      <a href="#" class="card"><div class="icon black"><i class="fa-solid fa-bolt"></i></div><span>Power</span></a>
+      <a href="#" class="card"><div class="icon yellow"><i class="fa-solid fa-star"></i></div><span>Star</span></a>
+
+      <a href="#" class="card"><div class="icon blue"><i class="fa-solid fa-newspaper"></i></div><span>News</span></a>
+      <a href="#" class="card"><div class="icon pink"><i class="fa-solid fa-heart"></i></div><span>Love</span></a>
+      <a href="#" class="card"><div class="icon red"><i class="fa-solid fa-cart-shopping"></i></div><span>Shop</span></a>
+      <a href="#" class="card"><div class="icon green"><i class="fa-solid fa-tree"></i></div><span>Tree</span></a>
+
+      <a href="#" class="card"><div class="icon black"><i class="fa-solid fa-mountain"></i></div><span>Hill</span></a>
+      <a href="#" class="card"><div class="icon yellow"><i class="fa-solid fa-music"></i></div><span>Music</span></a>
+      <a href="#" class="card"><div class="icon blue"><i class="fa-solid fa-cloud"></i></div><span>Cloud</span></a>
+      <a href="#" class="card"><div class="icon pink"><i class="fa-solid fa-camera"></i></div><span>Camera</span></a>
+    </div></div>
+    
+    
+    
+    <div class="page"><div class="dashboard">
+      <!-- 20 buttons -->
+      <a href="#" class="card"><div class="icon pink"><i class="fa-solid fa-wifi"></i></div><span>Amber</span></a>
+      <a href="#" class="card"><div class="icon red"><i class="fa-solid fa-film"></i></div><span>MLWBD</span></a>
+      <a href="#" class="card"><div class="icon blue"><i class="fa-solid fa-store"></i></div><span>Dokan</span></a>
+      <a href="#" class="card"><div class="icon green"><i class="fa-solid fa-leaf"></i></div><span>Nature</span></a>
+
+      <a href="#" class="card"><div class="icon yellow"><i class="fa-solid fa-file"></i></div><span>File</span></a>
+      <a href="#" class="card"><div class="icon black"><i class="fa-solid fa-wallet"></i></div><span>Wallet</span></a>
+      <a href="#" class="card"><div class="icon pink"><i class="fa-solid fa-video"></i></div><span>Movie</span></a>
+      <a href="#" class="card"><div class="icon blue"><i class="fa-solid fa-lock"></i></div><span>Secure</span></a>
+
+      <a href="#" class="card"><div class="icon red"><i class="fa-solid fa-gamepad"></i></div><span>Games</span></a>
+      <a href="#" class="card"><div class="icon green"><i class="fa-solid fa-leaf"></i></div><span>Green</span></a>
+      <a href="#" class="card"><div class="icon black"><i class="fa-solid fa-bolt"></i></div><span>Power</span></a>
+      <a href="#" class="card"><div class="icon yellow"><i class="fa-solid fa-star"></i></div><span>Star</span></a>
+
+      <a href="#" class="card"><div class="icon blue"><i class="fa-solid fa-newspaper"></i></div><span>News</span></a>
+      <a href="#" class="card"><div class="icon pink"><i class="fa-solid fa-heart"></i></div><span>Love</span></a>
+      <a href="#" class="card"><div class="icon red"><i class="fa-solid fa-cart-shopping"></i></div><span>Shop</span></a>
+      <a href="#" class="card"><div class="icon green"><i class="fa-solid fa-tree"></i></div><span>Tree</span></a>
+
+      <a href="#" class="card"><div class="icon black"><i class="fa-solid fa-mountain"></i></div><span>Hill</span></a>
+      <a href="#" class="card"><div class="icon yellow"><i class="fa-solid fa-music"></i></div><span>Music</span></a>
+      <a href="#" class="card"><div class="icon blue"><i class="fa-solid fa-cloud"></i></div><span>Cloud</span></a>
+      <a href="#" class="card"><div class="icon pink"><i class="fa-solid fa-camera"></i></div><span>Camera</span></a>
+    </div></div>
+    
+    
+    
+    <div class="page"><div class="dashboard">
+      <!-- 20 buttons -->
+      <a href="#" class="card"><div class="icon pink"><i class="fa-solid fa-wifi"></i></div><span>Amber</span></a>
+      <a href="#" class="card"><div class="icon red"><i class="fa-solid fa-film"></i></div><span>MLWBD</span></a>
+      <a href="#" class="card"><div class="icon blue"><i class="fa-solid fa-store"></i></div><span>Dokan</span></a>
+      <a href="#" class="card"><div class="icon green"><i class="fa-solid fa-leaf"></i></div><span>Nature</span></a>
+
+      <a href="#" class="card"><div class="icon yellow"><i class="fa-solid fa-file"></i></div><span>File</span></a>
+      <a href="#" class="card"><div class="icon black"><i class="fa-solid fa-wallet"></i></div><span>Wallet</span></a>
+      <a href="#" class="card"><div class="icon pink"><i class="fa-solid fa-video"></i></div><span>Movie</span></a>
+      <a href="#" class="card"><div class="icon blue"><i class="fa-solid fa-lock"></i></div><span>Secure</span></a>
+
+      <a href="#" class="card"><div class="icon red"><i class="fa-solid fa-gamepad"></i></div><span>Games</span></a>
+      <a href="#" class="card"><div class="icon green"><i class="fa-solid fa-leaf"></i></div><span>Green</span></a>
+      <a href="#" class="card"><div class="icon black"><i class="fa-solid fa-bolt"></i></div><span>Power</span></a>
+      <a href="#" class="card"><div class="icon yellow"><i class="fa-solid fa-star"></i></div><span>Star</span></a>
+
+      <a href="#" class="card"><div class="icon blue"><i class="fa-solid fa-newspaper"></i></div><span>News</span></a>
+      <a href="#" class="card"><div class="icon pink"><i class="fa-solid fa-heart"></i></div><span>Love</span></a>
+      <a href="#" class="card"><div class="icon red"><i class="fa-solid fa-cart-shopping"></i></div><span>Shop</span></a>
+      <a href="#" class="card"><div class="icon green"><i class="fa-solid fa-tree"></i></div><span>Tree</span></a>
+
+      <a href="#" class="card"><div class="icon black"><i class="fa-solid fa-mountain"></i></div><span>Hill</span></a>
+      <a href="#" class="card"><div class="icon yellow"><i class="fa-solid fa-music"></i></div><span>Music</span></a>
+      <a href="#" class="card"><div class="icon blue"><i class="fa-solid fa-cloud"></i></div><span>Cloud</span></a>
+      <a href="#" class="card"><div class="icon pink"><i class="fa-solid fa-camera"></i></div><span>Camera</span></a>
+    </div></div>
+    
+    <div class="page"><div class="dashboard">
+      <!-- 20 buttons -->
+      <a href="#" class="card"><div class="icon pink"><i class="fa-solid fa-wifi"></i></div><span>Amber</span></a>
+      <a href="#" class="card"><div class="icon red"><i class="fa-solid fa-film"></i></div><span>MLWBD</span></a>
+      <a href="#" class="card"><div class="icon blue"><i class="fa-solid fa-store"></i></div><span>Dokan</span></a>
+      <a href="#" class="card"><div class="icon green"><i class="fa-solid fa-leaf"></i></div><span>Nature</span></a>
+
+      <a href="#" class="card"><div class="icon yellow"><i class="fa-solid fa-file"></i></div><span>File</span></a>
+      <a href="#" class="card"><div class="icon black"><i class="fa-solid fa-wallet"></i></div><span>Wallet</span></a>
+      <a href="#" class="card"><div class="icon pink"><i class="fa-solid fa-video"></i></div><span>Movie</span></a>
+      <a href="#" class="card"><div class="icon blue"><i class="fa-solid fa-lock"></i></div><span>Secure</span></a>
+
+      <a href="#" class="card"><div class="icon red"><i class="fa-solid fa-gamepad"></i></div><span>Games</span></a>
+      <a href="#" class="card"><div class="icon green"><i class="fa-solid fa-leaf"></i></div><span>Green</span></a>
+      <a href="#" class="card"><div class="icon black"><i class="fa-solid fa-bolt"></i></div><span>Power</span></a>
+      <a href="#" class="card"><div class="icon yellow"><i class="fa-solid fa-star"></i></div><span>Star</span></a>
+
+      <a href="#" class="card"><div class="icon blue"><i class="fa-solid fa-newspaper"></i></div><span>News</span></a>
+      <a href="#" class="card"><div class="icon pink"><i class="fa-solid fa-heart"></i></div><span>Love</span></a>
+      <a href="#" class="card"><div class="icon red"><i class="fa-solid fa-cart-shopping"></i></div><span>Shop</span></a>
+      <a href="#" class="card"><div class="icon green"><i class="fa-solid fa-tree"></i></div><span>Tree</span></a>
+
+      <a href="#" class="card"><div class="icon black"><i class="fa-solid fa-mountain"></i></div><span>Hill</span></a>
+      <a href="#" class="card"><div class="icon yellow"><i class="fa-solid fa-music"></i></div><span>Music</span></a>
+      <a href="#" class="card"><div class="icon blue"><i class="fa-solid fa-cloud"></i></div><span>Cloud</span></a>
+      <a href="#" class="card"><div class="icon pink"><i class="fa-solid fa-camera"></i></div><span>Camera</span></a>
+    </div></div>
+    
+
+  </div>
+</div>
+
+<!-- DOTS -->
+<div class="dots" id="dots">
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+  <span class="dot"></span>
+</div>
+
+</div>
+
+<script>
+const pager = document.getElementById('pager');
+const dots  = document.querySelectorAll('.dot');
+const total = dots.length;
+
+let page = +localStorage.getItem('page') || 0;
+
+function update(){
+  pager.style.transform = `translateX(-${page*100}%)`;
+  dots.forEach((d,i)=>d.classList.toggle('active',i===page));
+  localStorage.setItem('page',page);
+}
+update();
+
+/* DOT CLICK */
+dots.forEach((dot,i)=>{
+  dot.onclick=()=>{page=i;update();}
+});
+
+/* KEYBOARD */
+document.addEventListener('keydown',e=>{
+  if(e.key==='ArrowRight') page=(page+1)%total;
+  if(e.key==='ArrowLeft')  page=(page-1+total)%total;
+  update();
+});
+
+/* SWIPE */
+let sx=0;
+document.addEventListener('touchstart',e=>sx=e.touches[0].clientX);
+document.addEventListener('touchend',e=>{
+  let dx=e.changedTouches[0].clientX-sx;
+  if(dx<-50) page=(page+1)%total;
+  if(dx>50)  page=(page-1+total)%total;
+  update();
+});
+</script>
+
+</body>
+</html>
+
